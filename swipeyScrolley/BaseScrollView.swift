@@ -8,7 +8,7 @@
 
 import UIKit
 import Cartography
-class BaseScrollView: UIScrollView {
+class BaseScrollView: UIScrollView, UITableViewDelegate, UITableViewDataSource {
 	
 	/*
 	// Only override drawRect: if you perform custom drawing.
@@ -17,11 +17,11 @@ class BaseScrollView: UIScrollView {
 	// Drawing code
 	}
 	*/
-	
+    let tableView = UITableView(frame: CGRectMake(0, 0, 300, 100))
     let dummyViewMargin:CGFloat = 20.0
     let dummyViewHeight:CGFloat = 256
     var childrenViews:[UIView] = []
-    
+    let dataValues = Array(1...6)
 	func configure(backgroundColor: UIColor, nextColor: UIColor)
 	{
 //		contentSize = frame.size
@@ -31,8 +31,38 @@ class BaseScrollView: UIScrollView {
 //		self.addSubview(nextView)
 		self.bounces = true
         addDummyViews(5)
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.dataSource = self
+        self.addSubview(tableView)
+        addTableView()
 	}
 	
+    func addTableView(){
+        tableView.contentSize = tableView.sizeThatFits(CGSizeMake(tableView.contentSize.width, CGFloat.max))
+        let tableViewHeight = tableView.contentSize.height
+        constrain(tableView, childrenViews.last!) { (tableView, lastChild) in
+            tableView.top == lastChild.bottom + dummyViewMargin
+            tableView.left == tableView.superview!.left + dummyViewMargin
+            tableView.width == tableView.superview!.width - dummyViewMargin * 2
+            tableView.height == tableViewHeight
+            tableView.bottom == tableView.superview!.bottom - dummyViewMargin * 2
+        }
+        layoutSubviews()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataValues.count
+    }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        cell.textLabel?.text = String(dataValues[indexPath.row])
+        return cell
+    }
     
     func addDummyViews(count: Int){
         for i in 0...count{
@@ -57,11 +87,11 @@ class BaseScrollView: UIScrollView {
                     view2.top == view1.bottom + dummyViewMargin
                 })
             }
-            if i == count{
-                constrain(child, block: { (view1) in
-                    view1.bottom == view1.superview!.bottom - dummyViewMargin
-                })
-            }
+//            if i == count{
+//                constrain(child, block: { (view1) in
+//                    view1.bottom == view1.superview!.bottom - dummyViewMargin
+//                })
+//            }
             child.setNeedsLayout()
             layoutSubviews()
             child.backgroundColor = UIColor.whiteColor()
