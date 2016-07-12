@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA421B51D34D86F005E96D1 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA421B41D34D86F005E96D1 /* Cartography.framework */; };
+		0DA421B71D34D874005E96D1 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA421B41D34D86F005E96D1 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DADF7721D2E70810055968F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DADF7711D2E70810055968F /* AppDelegate.swift */; };
 		0DADF7741D2E70810055968F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DADF7731D2E70810055968F /* ViewController.swift */; };
 		0DADF7771D2E70810055968F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DADF7751D2E70810055968F /* Main.storyboard */; };
 		0DADF7791D2E70810055968F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DADF7781D2E70810055968F /* Assets.xcassets */; };
 		0DADF77C1D2E70810055968F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DADF77A1D2E70810055968F /* LaunchScreen.storyboard */; };
 		0DADF7841D2E70E60055968F /* BaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DADF7831D2E70E60055968F /* BaseScrollView.swift */; };
-		0DADF7891D2E75DD0055968F /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DADF7851D2E75D10055968F /* Cartography.framework */; };
-		0DADF78A1D2E75DD0055968F /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DADF7851D2E75D10055968F /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0DADF78B1D2E75DD0055968F /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DADF7861D2E75D10055968F /* SnapKit.framework */; };
-		0DADF78C1D2E75DD0055968F /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DADF7861D2E75D10055968F /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DADF78F1D2E76470055968F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DADF78E1D2E76470055968F /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0DADF78A1D2E75DD0055968F /* Cartography.framework in Embed Frameworks */,
-				0DADF78C1D2E75DD0055968F /* SnapKit.framework in Embed Frameworks */,
+				0DA421B71D34D874005E96D1 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DA421B41D34D86F005E96D1 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		0DADF76E1D2E70810055968F /* swipeyScrolley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipeyScrolley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DADF7711D2E70810055968F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DADF7731D2E70810055968F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +42,6 @@
 		0DADF77B1D2E70810055968F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DADF77D1D2E70810055968F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DADF7831D2E70E60055968F /* BaseScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScrollView.swift; sourceTree = "<group>"; };
-		0DADF7851D2E75D10055968F /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
-		0DADF7861D2E75D10055968F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		0DADF78E1D2E76470055968F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,8 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DADF7891D2E75DD0055968F /* Cartography.framework in Frameworks */,
-				0DADF78B1D2E75DD0055968F /* SnapKit.framework in Frameworks */,
+				0DA421B51D34D86F005E96D1 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +60,7 @@
 		0DADF7651D2E70810055968F = {
 			isa = PBXGroup;
 			children = (
-				0DADF7851D2E75D10055968F /* Cartography.framework */,
-				0DADF7861D2E75D10055968F /* SnapKit.framework */,
+				0DA421B41D34D86F005E96D1 /* Cartography.framework */,
 				0DADF7701D2E70810055968F /* swipeyScrolley */,
 				0DADF76F1D2E70810055968F /* Products */,
 			);
